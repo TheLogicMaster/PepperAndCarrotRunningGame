@@ -54,7 +54,7 @@ public class CreditsTable extends Table {
 		TextButton gitHubLink = new TextButton("This game"+'\n'+"can be found"+'\n'+"on GitHub", Assets.I.skin);
 		gitHubLink.addListener(new ClickListener() {
 			public void clicked (InputEvent event, float x, float y) {
-				Gdx.net.openURI("https://github.com/WinterLicht/PepperAndCarrotRunningGame");
+				Gdx.net.openURI("https://github.com/TheLogicMaster/PepperAndCarrotRunningGame");
 				event.cancel();
 	        }
 	    });

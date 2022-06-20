@@ -1,1 +1,1 @@
-include 'desktop', 'android', 'html', 'core', 'ngame'
+include 'desktop', /*'android', 'html',*/ 'core', 'ngame', 'switch'

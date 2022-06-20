@@ -80,7 +80,7 @@ public class LoadingScreen extends ScreenAdapter {
 		float progress = Assets.I.manager.getProgress();
 		loadingBar.setValue(progress);
 
-		if (startGame) {
+		if (startGame || Gdx.input.isKeyJustPressed(Keys.BUTTON_A)) {
 			ScreenSwitch.getInstance().setStartScreen();
 		}
 

@@ -17,11 +17,17 @@ allprojects {
     version = '1.0'
     ext {
         appName = "pepper-and-carrot-running-game"
-        gdxVersion = '1.9.2'
+        gdxVersion = '1.11.0'
         roboVMVersion = '1.12.0'
         box2DLightsVersion = '1.4'
         ashleyVersion = '1.7.0'
         aiVersion = '1.8.0'
+        gdxControllersVersion = '2.0.1'
+//        clearwingVersion = 'v0.1'
+//        switchGdxVersion = 'v0.1'
+        clearwingVersion = '0.1'
+        switchGdxVersion = '0.1'
+        retroLambdaVersion = '2.5.7'
     }
 
     repositories {
@@ -36,50 +42,51 @@ project(":desktop") {
 
 
     dependencies {
-        compile project(":core")
-        compile "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
-        compile "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
+        implementation project(":core")
+        implementation "com.badlogicgames.gdx:gdx-backend-lwjgl:$gdxVersion"
+        implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+        implementation "com.badlogicgames.gdx:gdx-tools:$gdxVersion"
+        implementation "com.badlogicgames.gdx-controllers:gdx-controllers-desktop:$gdxControllersVersion"
     }
 }
 
-project(":android") {
-    apply plugin: "android"
-
-    configurations { natives }
-
-    dependencies {
-        compile project(":core")
-        compile "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
-        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64"
-    }
-}
-
-project(":html") {
-    apply plugin: "gwt"
-    apply plugin: "war"
-
-
-    dependencies {
-        compile project(":core")
-        compile "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx:$gdxVersion:sources"
-        compile "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion:sources"
-    }
-}
+//project(":android") {
+//    apply plugin: "android"
+//
+//    configurations { natives }
+//
+//    dependencies {
+//        implementation project(":core")
+//        implementation "com.badlogicgames.gdx:gdx-backend-android:$gdxVersion"
+//        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi"
+//        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-armeabi-v7a"
+//        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-arm64-v8a"
+//        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86"
+//        natives "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-x86_64"
+//    }
+//}
+//
+//project(":html") {
+//    apply plugin: "gwt"
+//    apply plugin: "war"
+//
+//
+//    dependencies {
+//        implementation project(":core")
+//        implementation "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion"
+//        implementation "com.badlogicgames.gdx:gdx:$gdxVersion:sources"
+//        implementation "com.badlogicgames.gdx:gdx-backend-gwt:$gdxVersion:sources"
+//    }
+//}
 
 project(":ngame") {
     apply plugin: "java"
 
 
     dependencies {
-        compile "com.badlogicgames.gdx:gdx:$gdxVersion"
-        compile "com.badlogicgames.gdx:gdx-controllers:$gdxVersion"
-        compile fileTree(dir: 'libs', include: '*.jar')
+        implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
+        implementation "com.badlogicgames.gdx-controllers:gdx-controllers-core:$gdxControllersVersion"
+        implementation fileTree(dir: 'libs', include: '*.jar')
     }
 }
 
@@ -88,8 +95,8 @@ project(":core") {
 
 
     dependencies {
-        compile "com.badlogicgames.gdx:gdx:$gdxVersion"
-        compile project(":ngame")
+        implementation "com.badlogicgames.gdx:gdx:$gdxVersion"
+        implementation project(":ngame")
     }
 }
 

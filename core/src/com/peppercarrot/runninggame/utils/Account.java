@@ -99,7 +99,7 @@ public enum Account {
 				
 			}
 		} catch(Exception e) {
-			System.out.println("Error in Account:loadData()");
+			System.out.println("Error in Account:loadData() " + e);
 		}
 	}
 

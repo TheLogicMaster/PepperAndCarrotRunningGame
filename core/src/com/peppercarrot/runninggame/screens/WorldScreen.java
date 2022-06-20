@@ -150,16 +150,16 @@ public class WorldScreen extends ScreenAdapter {
 		if (Gdx.input.isKeyJustPressed(Keys.BACK) || Gdx.input.isKeyJustPressed(Keys.ESCAPE)) {
 			ScreenSwitch.getInstance().setPauseScreen(this, stage);
 		}
-		if (Gdx.input.isKeyJustPressed(Keys.Y)) {
+		if (Gdx.input.isKeyJustPressed(Keys.Y) || Gdx.input.isKeyJustPressed(Keys.BUTTON_A)) {
 			ui.getAbilitySlot1().activate(stage);
 		}
-		if (Gdx.input.isKeyJustPressed(Keys.X)) {
+		if (Gdx.input.isKeyJustPressed(Keys.X) || Gdx.input.isKeyJustPressed(Keys.BUTTON_B)) {
 			ui.getAbilitySlot2().activate(stage);
 		}
-		if (Gdx.input.isKeyJustPressed(Keys.C)) {
+		if (Gdx.input.isKeyJustPressed(Keys.C) || Gdx.input.isKeyJustPressed(Keys.BUTTON_X)) {
 			ui.getAbilitySlot3().activate(stage);
 		}
-		if (Gdx.input.isKeyJustPressed(Keys.V)) {
+		if (Gdx.input.isKeyJustPressed(Keys.V) || Gdx.input.isKeyJustPressed(Keys.BUTTON_Y)) {
 			ui.getAbilitySlot0().activate(stage);
 		}
 		if (Gdx.input.isKeyJustPressed(Keys.TAB)) {
@@ -168,7 +168,7 @@ public class WorldScreen extends ScreenAdapter {
 		if (Gdx.input.isKeyJustPressed(Keys.P)) {
 			ScreenSwitch.getInstance().setPauseScreen(this, stage);
 		}
-		if (Gdx.input.isKeyJustPressed(Keys.SPACE)) {
+		if (Gdx.input.isKeyJustPressed(Keys.SPACE) || Gdx.input.isKeyJustPressed(Keys.DPAD_UP)) {
 			if (!gameStarted) {
 				ui.hideHint();
 				stage.start();
